@@ -5,7 +5,7 @@
 
 DECLSPEC_IMPORT DWORD WINAPI NETAPI32$DsGetDcNameA(LPVOID, LPVOID, LPVOID, LPVOID, ULONG, LPVOID);
 DECLSPEC_IMPORT DWORD WINAPI NETAPI32$NetApiBufferFree(LPVOID);
-
+// https://www.cobaltstrike.com/help-beacon-object-files
 void go(char * args, int alen) {
 	DWORD dwRet;
 	PDOMAIN_CONTROLLER_INFO pdcInfo;
@@ -16,13 +16,11 @@ void go(char * args, int alen) {
         "Domain: %s\n"
         "Domain Controller: %s\n"
         "Domain Controller Address: %s\n"
-        "Domain GUID: %s\n"
         "DC Site Name: %s\n",
         pdcInfo->DnsForestName,
         pdcInfo->DomainName,
         pdcInfo->DomainControllerName,
         pdcInfo->DomainControllerAddress,
-        pdcInfo->DomainGuid,
         pdcInfo->DcSiteName);        
 	}
 
