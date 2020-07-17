@@ -8,6 +8,14 @@ For compilation instructions and BOF overview [help-bof](https://www.cobaltstrik
 
 ## Active_Directory
 
-### GetDomainInfo
+### GetDomainInfo.c
 Returns information on the current domain and domain controller.
+`inline-execute GetDomainInfo.o`
+
+## Persistence
+
+### RegistryPersistence.c
+Installs or removes registry persistence.
+`inline-execute RegistryPersistence.o Install`
+`inline-execute RegistryPersistence.o Remove`
 
