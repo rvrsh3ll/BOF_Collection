@@ -17,6 +17,7 @@ Returns information on the current domain and domain controller.
 
 ### RegistryPersistence.c
 Installs or removes registry persistence.
+
 `inline-execute RegistryPersistence.o Install`
 
 `inline-execute RegistryPersistence.o Remove`
