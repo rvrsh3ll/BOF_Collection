@@ -20,7 +20,7 @@ Returns information on the current domain and domain controller.
 
 Prints any text on the clipboard.
 
-`inline-execute GetClipboard.c`
+`inline-execute GetClipboard.o`
 
 ## Persistence
 
