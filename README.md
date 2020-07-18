@@ -9,13 +9,23 @@ For compilation instructions and BOF overview [help-bof](https://www.cobaltstrik
 ## Active_Directory
 
 ### GetDomainInfo.c
+
 Returns information on the current domain and domain controller.
 
 `inline-execute GetDomainInfo.o`
 
+## Collection
+
+### GetClipboard.c
+
+Prints any text on the clipboard.
+
+`inline-execute GetClipboard.c`
+
 ## Persistence
 
 ### RegistryPersistence.c
+
 Installs or removes registry persistence.
 
 `inline-execute RegistryPersistence.o Install`
