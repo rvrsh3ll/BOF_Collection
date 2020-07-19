@@ -1,0 +1,18 @@
+alias bofportscan {
+	local('$handle $args $target $port');
+
+
+	# read in the right BOF file
+	$handle = openf(script_resource("PortScan.o"));
+	$data   = readb($handle, -1);
+	closef($handle);
+
+	# pack our arguments
+	$args   = bof_pack($1, "zz", $2, $3);
+
+	# announce what we're doing
+	btask($1, "Running PortScan BOF");
+	
+	# execute it.
+	beacon_inline_execute($1, $data, "go", $args);
+}

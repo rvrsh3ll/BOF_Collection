@@ -22,6 +22,16 @@ Prints any text on the clipboard.
 
 `inline-execute GetClipboard.o`
 
+## Network
+
+### PortScan.c
+
+Scans a single port on a remote host.
+
+load portscan.cna
+
+`bofportscan 192.168.1.10 3389`
+
 ## Persistence
 
 ### RegistryPersistence.c
