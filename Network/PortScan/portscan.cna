@@ -1,5 +1,5 @@
 alias bofportscan {
-	local('$handle $args $target $port');
+	local('$handle $args');
 
 
 	# read in the right BOF file
