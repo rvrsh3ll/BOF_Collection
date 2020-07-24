@@ -22,6 +22,16 @@ Prints any text on the clipboard.
 
 `inline-execute GetClipboard.o`
 
+### dumpwifi.c
+
+Enumerates WiFi interfaces and dumps clear text credentials
+
+load dumpwifi.cna
+
+`enumwifi`
+
+`dumpwifi Wifi_Profile_Name`
+
 ## Network
 
 ### PortScan.c
